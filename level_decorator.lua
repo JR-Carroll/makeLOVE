@@ -269,17 +269,6 @@ function checkConnectingRooms(room_to_check, roomx, roomy, roomloc)
 end
 
 function placeFloors(map)
-	-- S = Start Room
-	-- T = Treasure Room
-	-- B = Boss Room
-	-- $ = Shop Room
-	-- C = Battle Room
-	-- H = Hidden Room
-	-- h = Secret Hidden Room
-	-- A = Sacrafice Room
-	-- Y = Library Room
-	-- D = Arcade Room
-
 	for i = 1, #map.level, 1 do
 		for e = 1, #map.level[1] do
 			--default to empty
@@ -292,9 +281,9 @@ function placeFloors(map)
 				addFloor(map, {e,i}, "shop")
 			end
 			if map.level[i][e] == "R" then
-				-- Choose a random room
-				arnd = math.random(1, lvl)
-				if arnd ~= 1 then
+				-- Choose a random floor layout
+				arnd = math.random(1, 100)
+				if arnd > 80 then
 					rndtile = math.random(1,5)
 					addFloor(map, {e,i}, rndtile)
 				else

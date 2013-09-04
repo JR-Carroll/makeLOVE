@@ -64,7 +64,6 @@ function create_map(lvl)
 	room_loop = 0
 	--Add Required Rooms
 	while #required_rooms > 0 do
-		--print("Adding Required Rooms"..#required_rooms)
 	-- check the rooms around me to see if I can put a room there
 		current_room = pick_random_room(map)
 		open_locations = check_locations(current_room, "regular", map)
@@ -83,7 +82,6 @@ function create_map(lvl)
 	end
 	room_loop = 0
 	while #extra_rooms > 0 do
-		--print("Adding Extra Rooms")
 		current_room = pick_random_room(map)
 		open_locations = check_locations(current_room, "extra", map)
 		if #open_locations > 0 then
@@ -106,7 +104,6 @@ function create_map(lvl)
 		if optional_rooms[1] then
 			opt_rooms = math.random(#optional_rooms)
 			while opt_rooms > 0 do
-				--print("Adding An Optional Rooms"..opt_rooms)
 				current_room = pick_random_room(map)
 				open_locations = check_locations(current_room, "regular", map)
 				if #open_locations > 0 then

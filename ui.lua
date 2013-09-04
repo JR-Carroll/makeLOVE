@@ -58,14 +58,14 @@ function drawMenu()
 	
 	--for i = 1, #player.total_hearts, 1 do
 	--for testing
-	total_hearts = 15
-	health = 1
+	total_hearts = 15 --remove
+	health = 1 --remove
 	local heart_x = 0
 	local heart_y = 0
 	for i = 1, total_hearts, 1 do
 		-- How are we storing health. 2 points per heart?
 		heart_x = heart_x + 1
-		if i%11 == 0 then
+		if i%11 == 0 then -- 10 hearts per line
 			heart_y = heart_y + 1
 			heart_x = 1
 		end
@@ -127,10 +127,10 @@ function updateMinimappos(dt)
 				end
 			end
 		end
-		--This will error out if we go negative on the map, it wont happen when your paying the game
+		--This will error out if we go negative on the map, it wont happen when you're paying the game
 		map.minimaprooms[map.current_tile_y][map.current_tile_x] = "3" -- 2 means 'visited'
 	end
-	-- Move the menu if its needed
+	-- Move the menu if 'm' is pressed
 	if menu.moving == "up" then
 		if menu.going_y ~= 0 then
 			menu.going_y = menu.going_y - 1
